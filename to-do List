@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="enter the characters" id="inp">
+    <button onclick="add()">add</button>
+    <ul id="listcontainer">
+    </ul>
+    <script>
+        var input=document.getElementById("inp")
+        var ul=document.getElementById("listcontainer")
+        function add(){
+            var listitem=document.createElement("li")
+            listitem.innerHTML=input.value +"<button onclick='deleteitem(event)'>delete<button>"
+            ul.append(listitem)
+        }
+        function deleteitem(event){
+            event.target.parentElement.remove()
+        }
+    </script>
+</body>
+</html>
